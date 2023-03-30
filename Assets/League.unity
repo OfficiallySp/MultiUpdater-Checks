@@ -4555,7 +4555,6 @@ GameObject:
   - component: {fileID: 844209484}
   - component: {fileID: 844209482}
   - component: {fileID: 844209487}
-  - component: {fileID: 844209488}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4649,26 +4648,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &844209488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844209481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438260cce20a63a4ba04bfb09adcb9de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdown: {fileID: 0}
-  gameObjects:
-  - {fileID: 198448109}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1408515644}
 --- !u!1 &867282440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,7 +5478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67bc43f70574734eaf68d25624f8b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages: []
 --- !u!1 &1154274836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,7 +5560,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6677,76 +6655,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!1 &1406429965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1406429967}
-  - component: {fileID: 1406429966}
-  m_Layer: 0
-  m_Name: Discord
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &1406429966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406429965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ea4bc4d93763041b712d181309f47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  applicationId: 995407994303033477
-  optionalSteamId: 
-  onConnect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1406429966}
-        m_TargetAssemblyTypeName: DiscordController, Assembly-CSharp
-        m_MethodName: PresenceData
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  details: Customs Every Saturday From 5PM
-  state: twitch.tv/bigcheesegames
-  startTimestamp: 0
-  largeImageKey: myles
-  largeImageText: Live from 3PM
-  smallImageKey: rift
-  smallImageText: RiftRandomizer Made with <3 By Shane (OfficiallySp)
-  partySize: 0
-  partyMax: 0
---- !u!4 &1406429967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406429965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408515644
 GameObject:
   m_ObjectHideFlags: 0
