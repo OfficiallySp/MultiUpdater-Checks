@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/names.unity
-    guid: a562796d300f9304fa09cdd04e344e9f
+    path: Assets/startup.unity
+    guid: 22bfd1c390a92e344ad3910daaa40eee
+  - enabled: 1
+    path: Assets/League.unity
+    guid: e7667e9d10e15fd47954ccd72d55218b
+  - enabled: 1
+    path: Assets/Valo.unity
+    guid: 1282139d85759f74582177e4bb1a491b
   m_configObjects: {}
