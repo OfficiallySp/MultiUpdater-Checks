@@ -54,7 +54,9 @@ public static class AppBuild
 
             Assert.IsNotNull(scenes);
 
-            return scenes.Where(x => x != null).Select(s => s.path);
+            return scenes
+                .Where(s => s != null && File.Exists(s.path) && s.enabled)
+                .Select(s => s.path);
         }
     }
 
@@ -70,12 +72,12 @@ public static class AppBuild
 
             string validationError = GetLocationValidationError(value);
 
-            if (validationError != null)
+            if (validationError == null)
             {
-                Debug.LogError(validationError);
+                return value;
             }
 
-            return value;
+            return null;
         }
         set
         {
@@ -163,7 +165,9 @@ public static class AppBuild
             case AppPlatform.Linux64:
                 break;
             case AppPlatform.Mac64:
-                break;
+                string macBuildFileName = Path.GetFileName(location);
+
+                return GetFilesOutsideOfBuildEntries(location, macBuildFileName);
             case null:
                 break;
             default:
@@ -177,12 +181,12 @@ public static class AppBuild
     {
         if (location == null)
         {
-            return "Build location cannot be null.";
+            return "The build location cannot be null.";
         }
 
         if (string.IsNullOrEmpty(location))
         {
-            return "Build location cannot be empty.";
+            return "The build location cannot be empty.";
         }
 
         switch (Platform)
@@ -192,7 +196,7 @@ public static class AppBuild
                 if (!location.EndsWith(".exe"))
                 {
                     return
-                        "Invalid build location file extension. Should be .exe.";
+                        "Invalid build location file extension. It should be .exe.";
                 }
 
                 break;
@@ -203,16 +207,8 @@ public static class AppBuild
                 if (!location.EndsWith(".app"))
                 {
                     return
-                        "Invalid build location file extension. Should be .app.";
+                        "Invalid build location file extension. It should be .app.";
                 }
-
-                string macBuildFileName = Path.GetFileName(location);
-
-                if (GetFilesOutsideOfBuildEntries(location, macBuildFileName).Any())
-                {
-                    return "Build location must be an empty directory.";
-                }
-
                 break;
             case null:
                 break;

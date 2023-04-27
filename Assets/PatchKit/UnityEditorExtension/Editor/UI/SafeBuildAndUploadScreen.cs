@@ -202,7 +202,7 @@ public class SafeBuildAndUploadScreen : Screen
                 if (GUILayout.Button(
                     new GUIContent(
                         "Edit Scenes",
-                        "Button open Build Settings window."),
+                        "Button opens the Build Settings window."),
                     GUILayout.Width(110)))
                 {
                     Dispatch(() => SwitchScenes());
@@ -253,7 +253,7 @@ public class SafeBuildAndUploadScreen : Screen
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
         {
-            EditorGUILayout.LabelField("Overwrite draft version if it exists");
+            EditorGUILayout.LabelField("Overwrite the draft version if it exists");
             _overwriteDraftVersion =
                 EditorGUILayout.Toggle(_overwriteDraftVersion);
         }
@@ -277,7 +277,13 @@ public class SafeBuildAndUploadScreen : Screen
         if (!IsBuildLocationSelected)
         {
             EditorGUILayout.HelpBox(
-                "You haven't selected build location.",
+                "You haven't selected the build location.",
+                MessageType.Error);
+        }
+        else if (!IsScenesSelected)
+        {
+            EditorGUILayout.HelpBox(
+                "You haven't selected any scenes.",
                 MessageType.Error);
         }
         else if (VersionLabelValidationError != null)
@@ -395,7 +401,7 @@ public class SafeBuildAndUploadScreen : Screen
                     {
                         EditorUtility.DisplayDialog(
                             "Game Not Found",
-                            "This game does no longer exist on your PatchKit account.\n\n",
+                            "This game no longer exists on your PatchKit account.\n\n",
                             "OK");
                         Config.UnlinkApp(_platform);
                     });
@@ -435,6 +441,11 @@ public class SafeBuildAndUploadScreen : Screen
     private bool IsBuildLocationSelected
     {
         get { return !string.IsNullOrEmpty(BuildLocation); }
+    }
+    
+    private bool IsScenesSelected
+    {
+        get { return AppBuild.Scenes.Any(); }
     }
 
     private string VersionLabelValidationError
@@ -501,7 +512,7 @@ public class SafeBuildAndUploadScreen : Screen
             EditorUtility.DisplayDialog(
                 "Uploading",
                 "Your game has been successfully built and is being uploaded right now.\n\n" +
-                "You can track the progress in console window.",
+                "You can track the progress in the console window.",
                 "OK");
 
             Close();
