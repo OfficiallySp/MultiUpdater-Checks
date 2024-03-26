@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | RiftRandomizer</title>
+    <title>RiftRandomizer Web</title>
+    <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
+></script>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #000000"></canvas>
@@ -21,7 +25,7 @@
         canvas.style.height = "100%";
         canvas.style.position = "fixed";
 
-        document.body.style.textAlign = "left";
+        document.body.style.textAlign = "center";
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
