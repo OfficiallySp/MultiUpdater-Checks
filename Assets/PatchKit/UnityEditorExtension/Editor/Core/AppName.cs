@@ -39,8 +39,8 @@ public struct AppName
         }
 
         if (!value.All(
-            c => c >= 'a' && c <= 'z' ||
-                c >= 'A' && c <= 'Z' ||
+            c => (c >= 'a' && c <= 'z') ||
+                (c >= 'A' && c <= 'Z') ||
                 char.IsWhiteSpace(c) ||
                 char.IsPunctuation(c) ||
                 char.IsDigit(c)))
