@@ -265,7 +265,7 @@ public class ConnectAppScreen : Screen
             }
 
             return _apps.Where(
-                x => !_shouldFilterByPlatform && x.platform != "other" ||
+                x => (!_shouldFilterByPlatform && x.platform != "other") ||
                     x.platform == _platform.ToApiString());
         }
     }

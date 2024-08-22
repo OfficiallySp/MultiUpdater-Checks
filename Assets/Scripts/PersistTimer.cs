@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,9 +24,9 @@ public class PersistTimer : MonoBehaviour
             yield return new WaitForSeconds(1);
             playtime += 1;
             seconds = playtime % 60;
-            minutes = playtime / 60 % 60;
-            hours = playtime / 3600 % 24;
-            days = playtime / 86400 % 365;
+            minutes = (playtime / 60) % 60;
+            hours = (playtime / 3600) % 24;
+            days = (playtime / 86400) % 365;
         }
     }
 

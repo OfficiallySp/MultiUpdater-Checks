@@ -91,6 +91,5 @@ public class AppManager : MonoBehaviour
     }
     public void LockDefault()
     {
-
     }
 }
